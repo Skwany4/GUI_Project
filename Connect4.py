@@ -11,6 +11,3 @@ def checkMove(board,col):
         return True
     else:
         return False
-
-def checkWin(board,symbol):
-    if
