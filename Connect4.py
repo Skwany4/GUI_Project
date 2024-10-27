@@ -11,4 +11,3 @@ def checkMove(board,col):
         return True
     else:
         return False
-deff
