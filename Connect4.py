@@ -51,7 +51,7 @@ def checkDirection(board, row, col, symbol, delta_row, delta_col):
 def connect4Game():
     board = createBoard()
     game_over = False
-    current_player = "X"
+    current_player = "🔴"
 
     while not game_over:
         print(board)
@@ -68,7 +68,7 @@ def connect4Game():
                 print(f"Player {current_player} wins!")
                 game_over = True
             else:
-                current_player = "O" if current_player == "X" else "X"
+                current_player = "🟡" if current_player == "🔴" else "🔴"
         else:
             print("Column is full. Try a different column.")
 
@@ -76,3 +76,4 @@ def connect4Game():
             print("It's a draw!")
             game_over = True
 
+newgame= connect4Game()

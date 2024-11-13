@@ -13,19 +13,19 @@ class RegisterPanel(tkinter.Frame):
 
         TopLabel = customtkinter.CTkLabel(self,text="Games Platform", fg_color="#343A40", text_color="#FFFFFF", font=("Roboto", 40, "bold"), height=150)
 
-        EmailLabel = customtkinter.CTkLabel(self, text="Email: ", font=("Roboto", 20, "bold"))
+        EmailLabel = customtkinter.CTkLabel(self, text="Email: ", font=("Roboto", 20, "bold"),text_color="#000000")
         self.EmailEntry = customtkinter.CTkEntry(self)
 
-        UserNameLabel = customtkinter.CTkLabel(self, text="Username: ", font=("Roboto", 20, "bold"))
+        UserNameLabel = customtkinter.CTkLabel(self, text="Username: ", font=("Roboto", 20, "bold"),text_color="#000000")
         self.UsernameEntry = customtkinter.CTkEntry(self)
 
-        PasswordLabel = customtkinter.CTkLabel(self, text="Password: ", font=("Roboto", 20, "bold"), )
+        PasswordLabel = customtkinter.CTkLabel(self, text="Password: ", font=("Roboto", 20, "bold"), text_color="#000000")
         self.PasswordEntry = customtkinter.CTkEntry(self, show="*")
 
-        ConfirmPasswordLabel = customtkinter.CTkLabel(self,text="Confirm password: ", font=("Roboto", 20, "bold"))
+        ConfirmPasswordLabel = customtkinter.CTkLabel(self,text="Confirm password: ", font=("Roboto", 20, "bold"),text_color="#000000")
         self.ConfrimPasswordEntry = customtkinter.CTkEntry(self,show="*")
 
-        self.ConfirmCheckBox = customtkinter.CTkCheckBox(self, text="Confirm")
+        self.ConfirmCheckBox = customtkinter.CTkCheckBox(self, text="Confirm",text_color="#000000")
 
         Submit = customtkinter.CTkButton(self, text="Register", fg_color="#343A40", text_color="#FFFFFF",
                                          corner_radius=20, font=("Roboto", 30, "bold"), height=100, width=300,
@@ -34,7 +34,7 @@ class RegisterPanel(tkinter.Frame):
         self.BackArrowImage = customtkinter.CTkImage(Image.open("Images/BackArrow.png"), size=(50, 50))
 
         BackButton = customtkinter.CTkButton(self, image=self.BackArrowImage, text="", fg_color="#FFFFFF", hover=False,
-                                             command=self.app.showMainMenu)
+                                             command=self.app.showMainMenu,)
 
         self.MessageLabel = customtkinter.CTkLabel(self, text ="")
 

@@ -22,10 +22,10 @@ class LoginPanel(tkinter.Frame):
         BackButton = customtkinter.CTkButton(self, image=self.BackArrowImage, text="", fg_color="#FFFFFF",
                                              hover=False, command=self.app.showMainMenu)
 
-        UserNameLabel = customtkinter.CTkLabel(self, text="Username: ", font=("Roboto", 20, "bold"))
+        UserNameLabel = customtkinter.CTkLabel(self, text="Username: ", font=("Roboto", 20, "bold"), text_color="#000000")
         self.UsernameEntry = customtkinter.CTkEntry(self)
 
-        PasswordLabel = customtkinter.CTkLabel(self, text="Password: ", font=("Roboto", 20, "bold"))
+        PasswordLabel = customtkinter.CTkLabel(self, text="Password: ", font=("Roboto", 20, "bold"),text_color="#000000")
         self.PasswordEntry = customtkinter.CTkEntry(self, show="*")
 
         self.message_label = customtkinter.CTkLabel(self, text="", text_color="red", font=("Roboto", 16))
