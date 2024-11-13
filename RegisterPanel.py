@@ -3,7 +3,7 @@ import customtkinter
 from PIL import Image, ImageTk
 import sqlite3
 
-class RegisterPanel(tkinter.Frame):
+class RegisterPanel(customtkinter.CTkFrame):
     def __init__(self, app):
         super().__init__(app.tk)
         self.app = app

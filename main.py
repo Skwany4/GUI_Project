@@ -7,12 +7,16 @@ from RegisterPanel import RegisterPanel
 from SelectGame import SelectGame
 from TicTacToe import TicTacToe
 
+
+customtkinter.set_appearance_mode("light")
+
 class mainApp:
     def __init__(self,tk):
         self.tk = tk
         self.tk.title("Games Platform")
         self.tk.geometry("1280x720")
         self.tk.resizable(False, False)
+        self.tk.configure(fg_color="white")
 
         self.currentWindow = None
         self.showMainMenu()

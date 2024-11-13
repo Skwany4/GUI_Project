@@ -2,7 +2,7 @@ import customtkinter
 import tkinter
 
 
-class TicTacToe(tkinter.Frame):
+class TicTacToe(customtkinter.CTkFrame):
     def __init__(self, app):
         super().__init__(app.tk)
         self.board = ['-' for _ in range(9)]

@@ -4,11 +4,12 @@ from PIL import Image, ImageTk
 import sqlite3
 
 
-class LoginPanel(tkinter.Frame):
+class LoginPanel(customtkinter.CTkFrame):
     def __init__(self, app):
         super().__init__(app.tk)
         self.app = app
         self.createLoginPanel()
+        self.configure(fg_color = "white")
 
     def createLoginPanel(self):
         TopLabel = customtkinter.CTkLabel(self, text="Games Platform", fg_color="#343A40",

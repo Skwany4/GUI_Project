@@ -2,7 +2,7 @@ import numpy as np
 import tkinter
 import customtkinter
 
-class Connect4(tkinter.Frame):
+class Connect4(customtkinter.CTkFrame):
     def __init__(self, app):
         super().__init__(app.tk)
         self.app = app
