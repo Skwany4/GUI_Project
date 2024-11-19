@@ -15,6 +15,8 @@ class LoginPanel(customtkinter.CTkFrame):
         TopLabel = customtkinter.CTkLabel(self, text="Games Platform", fg_color="#343A40",
                                           text_color="#FFFFFF", font=("Roboto", 40, "bold"), height=150)
 
+        LoginLabel = customtkinter
+
         Submit = customtkinter.CTkButton(self, text="Log in", fg_color="#343A40", text_color="#FFFFFF",
                                          corner_radius=20, font=("Roboto", 30, "bold"), height=100, width=300,
                                          command=self.verify_login)
