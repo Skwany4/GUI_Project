@@ -1,14 +1,14 @@
 import tkinter
 import customtkinter
+import sqlite3
 
-from Connect4 import Connect4
-from MainMenu import MainMenu
-from LoginPanel import LoginPanel
-from RegisterPanel import RegisterPanel
+from Menu import *
+from Connect4 import *
+from Menu.Profile import Profile
+from TicTacToe import *
+from Memory import Memory
 from RockScissorsPaper import RockScissorsPaper
-from SelectGame import SelectGame
-from TicTacToe import TicTacToe
-#from SlideGame import SlideGame
+from Leaderboard import Leaderboard
 
 customtkinter.set_appearance_mode("light")
 
@@ -18,6 +18,7 @@ class mainApp:
         self.tk.title("Games Platform")
         self.tk.geometry("1280x720")
         self.tk.resizable(False, False)
+        self.loggedUserId = None
 
         self.currentWindow = None
         self.showMainMenu()
@@ -53,16 +54,49 @@ class mainApp:
         Connect_4 = Connect4(self)
         self.showWindow(Connect_4)
 
+    def showConnect4AI(self):
+        Connect_4_AI = Connect4(self, vsAI = True)
+        self.showWindow(Connect_4_AI)
+
     def showRockScissorsPaper(self):
         Rock_Scissors_Paper = RockScissorsPaper(self)
         self.showWindow(Rock_Scissors_Paper)
 
-    # def showSlideGame(self):
-    #     Slide_Game = SlideGame(self)
-    #     self.showWindow(Slide_Game)
+    def showConnect4Select(self):
+        Connect_4_Select = Connect4Select(self)
+        self.showWindow(Connect_4_Select)
 
+    def showMemory(self):
+        memoryGame = Memory(self)
+        self.showWindow(memoryGame)
+
+    def showTicTacToeAI(self):
+        tic_tac_toe_ai = TicTacToe(self, vsAI=True)
+        self.showWindow(tic_tac_toe_ai)
+
+    def showTicTacToeSelect(self):
+        tic_tac_toe_select = TicTacToeSelect(self)
+        self.showWindow(tic_tac_toe_select)
+
+    def showProfile(self,userId):
+        show_Profile = Profile(self, userId)
+        self.showWindow(show_Profile)
+
+    def showLeaderboard(self):
+        leaderboard = Leaderboard(self)
+        self.showWindow(leaderboard)
+
+    def updateUserScore(self, points):
+        if self.loggedUserId is not None:
+            conn = sqlite3.connect("Menu/Users.db")
+            cursor = conn.cursor()
+            cursor.execute("UPDATE users SET score = score + ? WHERE id_user = ?", (points, self.loggedUserId))
+            conn.commit()
+            conn.close()
 
 if __name__ == "__main__":
     ctk = customtkinter.CTk()
     app = mainApp(ctk)
     ctk.mainloop()
+
+# https://coolors.co/palette/0d1321-1d2d44-3e5c76-748cab-f0ebd8 #
