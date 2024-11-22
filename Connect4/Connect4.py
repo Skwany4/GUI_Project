@@ -97,11 +97,11 @@ class Connect4(customtkinter.CTkFrame):
         for row in range(6):
             for col in range(7):
                 symbol = self.board[row][col]
-                color = "#FFFFFF"  # Domyślny kolor
+                color = "#FFFFFF"
                 if symbol == "🔴":
-                    color = "#FF0000"  # Czerwony dla gracza 1
+                    color = "#FF0000"
                 elif symbol == "🟡":
-                    color = "#FFFF00"  # Żółty dla gracza 2
+                    color = "#FFFF00"
                 if symbol != "-":
                     self.buttons[row][col].configure(fg_color=color, text="")
 
